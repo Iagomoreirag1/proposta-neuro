@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta Ética Saúde | Plano Green Life</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0b2a4a;
+            --primary-light: #164375;
+            --secondary: #1a8fbb;
+            --accent: #f57c00;
+            --whatsapp: #25d366;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-body: #f1f5f9;
+            --white: #ffffff;
+        }
+
+        /* RESET E BASE */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background: var(--bg-body); color: var(--text-main); line-height: 1.6; }
+
+        .container { 
+            max-width: 480px; 
+            margin: auto; 
+            background: var(--white); 
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* ANIMAÇÕES */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-10px); } 60% { transform: translateY(-5px); } }
+        .animate { animation: fadeIn 0.8s ease forwards; }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(180deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            padding: 60px 24px;
+            text-align: center;
+            border-bottom-left-radius: 60px;
+            clip-path: ellipse(150% 100% at 50% 0%);
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .hero h1 { font-size: 32px; font-weight: 800; line-height: 1.1; margin-bottom: 16px; letter-spacing: -1px; }
+        .hero p { font-size: 15px; opacity: 0.85; margin-bottom: 30px; }
+        .scroll-hint { margin-top: 20px; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; opacity: 0.6; }
+        .scroll-hint::after { content: "↓"; display: block; font-size: 24px; animation: bounce 2s infinite; }
+
+        /* SEÇÕES */
+        section { padding: 30px 20px; min-height: auto; display: flex; flex-direction: column; justify-content: center; }
+
+        /* CARDS */
+        .card {
+            background: var(--white);
+            border-radius: 30px;
+            padding: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+        .card-rede::before { content: ""; position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: var(--secondary); }
+        .h3-title { color: var(--primary); font-size: 17px; font-weight: 800; margin-bottom: 5px; }
+        .h4-subtitle { color: var(--secondary); font-size: 11px; font-weight: 800; margin-top: 25px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #f1f5f9; padding-bottom: 5px; }
+        
+        /* LISTAS */
+        .list-clean { list-style: none; }
+        .list-clean li { padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-size: 13px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+        .list-clean li strong { color: var(--primary); font-weight: 700; flex: 1; }
+        .list-clean li span { color: var(--text-muted); font-size: 11px; white-space: nowrap; }
+
+        /* TABELA DE PREÇOS INTERNA */
+        .price-container {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+        }
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .price-label { font-size: 11px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; }
+        .price-value { font-size: 22px; color: var(--primary); font-weight: 800; }
+        .price-validity { font-size: 9px; color: var(--text-muted); text-align: right; margin-top: 4px; }
+
+        /* BOTÕES */
+        .btn {
+            display: flex; align-items: center; justify-content: center; padding: 18px;
+            border-radius: 18px; text-decoration: none; font-weight: 700; font-size: 14px;
+            text-transform: uppercase; transition: 0.3s; width: 100%; margin-top: 15px;
+        }
+        .btn-orange { background: var(--accent); color: var(--white); box-shadow: 0 10px 20px rgba(245, 124, 0, 0.2); }
+        .btn-whatsapp { background: var(--whatsapp); color: var(--white); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2); }
+
+        /* CARD MASTER */
+        .card-master { background: var(--primary); color: var(--white); border-radius: 30px; padding: 40px 30px; box-shadow: 0 25px 50px rgba(11, 42, 74, 0.3); }
+        .badge-master { background: var(--accent); color: var(--white); font-size: 10px; font-weight: 800; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 15px; }
+        .check-list { list-style: none; margin: 20px 0; }
+        .check-list li { margin-bottom: 12px; font-size: 14px; display: flex; align-items: center; gap: 10px; }
+        .check-list li::before { content: "✓"; color: var(--whatsapp); font-weight: 900; }
+
+        footer { text-align: center; padding: 40px 20px; opacity: 0.6; font-size: 11px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <header class="hero">
+        <div class="animate">
+            <span style="font-size: 12px; font-weight: 700; letter-spacing: 3px; opacity: 0.7;">PLANO GREEN LIFE – DF</span>
+            <h1>Saúde de alto nível,<br>no ritmo da sua vida.</h1>
+            <p>Compare redes de atendimento em Brasília e encontre o plano ideal para seu perfil, com clareza total.</p>
+            <a href="#master" class="btn btn-orange">Ver Plano Master</a>
+            <div class="scroll-hint">Compare as redes disponíveis</div>
+        </div>
+    </header>
+
+    <section>
+        <div class="card card-rede animate">
+            <span style="font-size: 10px; font-weight: 700; color: var(--secondary); text-transform: uppercase;">Plano Essencial • Rede Regional</span>
+            <h3 class="h3-title">Rede Essencial DF</h3>
+            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">Rede regional com excelente custo-benefício para atendimento confiável no DF.</p>
+            
+            <h4 class="h4-subtitle">🏥 Principais Hospitais</h4>
+            <ul class="list-clean">
+                <li><strong>H. Santa Luzia</strong> <span>Taguatinga</span></li>
+                <li><strong>H. São Francisco</strong> <span>Asa Norte</span></li>
+                <li><strong>H. Maria Auxiliadora</strong> <span>Ceilândia</span></li>
+                <li><strong>H. São Lucas</strong> <span>Gama</span></li>
+                <li><strong>H. Santa Maria</strong> <span>Santa Maria</span></li>
+            </ul>
+
+            <h4 class="h4-subtitle">🩺 Hospitais e Unidades de Apoio</h4>
+            <ul class="list-clean">
+                <li><strong>H. Santa Lúcia Norte</strong> <span>Asa Norte</span></li>
+                <li><strong>H. Santa Marta</strong> <span>Taguatinga Sul</span></li>
+                <li><strong>H. Santa Lúcia</strong> <span>Gama</span></li>
+                <li><strong>HOME Ortopédico</strong> <span>Asa Sul</span></li>
+                <li><strong>HOB Oftalmológico</strong> <span>Asa Sul</span></li>
+                <li><strong>HOB Oftalmológico</strong> <span>Taguatinga</span></li>
+                <li><strong>H. Mantevida</strong> <span>Asa Norte</span></li>
+                <li><strong>H. PAI</strong> <span>Asa Sul</span></li>
+                <li><strong>C. C. Mantevida</strong> <span>Taguatinga Sul</span></li>
+                <li><strong>H. Clínicas e PS Fraturas</strong> <span>Ceilândia</span></li>
+            </ul>
+
+            <h4 class="h4-subtitle">🧠 Atendimento Neurológico (informativo)</h4>
+            <ul class="list-clean">
+                <li>
+                    <strong>Hospital Santa Lúcia Norte</strong>
+                    <span>Neurologia / Neurocirurgia</span>
+                </li>
+                <li>
+                    <strong>Hospital Santa Lúcia – Gama</strong>
+                    <span>Neurologia clínica e cirúrgica</span>
+                </li>
+                <li>
+                    <strong>Hospital Mantevida – Asa Norte</strong>
+                    <span>Neurologia integrada</span>
+                </li>
+                <li>
+                    <strong>Hospital PAI – Asa Sul</strong>
+                    <span>Interface neurológica*</span>
+                </li>
+            </ul>
+            <p style="font-size:10px; color:#64748b; margin-top:6px; line-height: 1.4;">
+                *Informações de caráter orientativo. A disponibilidade de especialidades pode variar conforme o caso clínico e autorização do plano.
+            </p>
+
+            <h4 class="h4-subtitle">🔬 Clínicas e Diagnósticos</h4>
+            <ul class="list-clean">
+                <li><strong>Sabin</strong> <span>Exames laboratoriais</span></li>
+                <li><strong>Exame</strong> <span>Medicina diagnóstica</span></li>
+                <li><strong>Factual</strong> <span>Laboratório</span></li>
+            </ul>
+
+            <div class="price-container">
+                <div class="price-row">
+                    <div class="price-label">A partir de (34 anos)</div>
+                    <div class="price-value">R$ 412,50*</div>
+                </div>
+                <div class="price-validity">*Valor ilustrativo. Sujeito a variação por perfil.</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="master">
+        <div class="card-master animate">
+            <span class="badge-master">RECOMENDADO</span>
+            <h2 style="font-size: 26px; margin-bottom: 5px;">Master Life</h2>
+            <p style="font-size: 14px; opacity: 0.9;">Cobertura completa para quem não abre mão de liberdade, conforto e reembolso.</p>
+            
+            <ul class="check-list">
+                <li>Uso livre, sem coparticipação</li>
+                <li>Livre escolha com reembolso</li>
+                <li>Rede premium (Sabin, Exame e Factual)</li>
+                <li>Internação em acomodação privativa</li>
+                <li>Maior flexibilidade para procedimentos</li>
+            </ul>
+
+            <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 20px; text-align: center;">
+                <span style="font-size: 12px; opacity: 0.9;">Investimento (Idade 34 anos)</span>
+                <div style="font-size: 36px; font-weight: 800;">R$ 682,05</div>
+                <span style="font-size: 10px; opacity: 0.6;">Valores vigentes para Dezembro/2025</span>
+            </div>
+
+            <a href="https://wa.me/5561999999999" class="btn btn-whatsapp">
+                Solicitar cotação no WhatsApp
+            </a>
+            <p style="text-align: center; font-size: 10px; margin-top: 10px; opacity: 0.8;">Atendimento consultivo e simulação imediata.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>GRUPO ÉTICA SAÚDE</strong></p>
+        <p>Consultoria Autorizada Brasília</p>
+        <p style="margin-top: 15px;">© 2025 - Transparência total em seguros</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
